@@ -5,17 +5,30 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
+// import { Container, Col, Row } from 'react-bootstrap';
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <h1>Welcome!</h1>
+
+    <p>There are two core reasons for this website:</p>
+    <ol>
+      <li>To keep track of everything I'm spending my time on</li>
+      <li>For me to learn<code>HTML</code>/<code>CSS</code>/<code>JavaScript</code></li>
+    </ol>
+    <p>Thanks for checking it out! You can find a menu in the elliptic stars (and dark mode in my name).</p>
+
+    {/* <Container>
+      <Row>
+        <Col lg={4}>
+          Test 1
+        </Col>
+        <Col lg={4}>
+          Test 2
+        </Col>
+      </Row>
+    </Container> */}
   </Layout>
 )
 
