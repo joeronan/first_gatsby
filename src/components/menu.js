@@ -1,11 +1,6 @@
 import React from 'react'
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { useSpring, animated } from 'react-spring'
-
-// const props = useSpring({
-//   opacity: 1,
-//   from: { opacity: 0 }
-// })
 
 const Menu = () => {
 
@@ -40,6 +35,25 @@ const Menu = () => {
         </animateMotion>
       </path>);
   }
+
+  const data = useStaticQuery(graphql`
+  query BlogIndexQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            path
+            title
+            date
+            description
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`)
 
   return (
     <div>
@@ -87,9 +101,11 @@ const Menu = () => {
           }}>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/page-2/">Second Page</Link></li>
-            <li><Link to="/test/">Test Page</Link></li>
             <li><Link to="/using-typescript/">Using Typescript</Link></li>
             <li><Link to="/404/">404</Link></li>
+            {data.allMarkdownRemark.edges.map(post => (
+              <li key={post.node.id}><Link to={post.node.frontmatter.path}>{post.node.frontmatter.title}</Link></li>
+            ))}
           </ul>
         }
       </animated.div>
