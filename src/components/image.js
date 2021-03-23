@@ -18,7 +18,7 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "header.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 400) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -30,7 +30,10 @@ const Image = () => {
     return <div>Picture not found</div>
   }
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img
+    fluid={data.placeholderImage.childImageSharp.fluid}
+    alt="Hand written text saying website title 'Joe James Ronan'"
+    fadeIn />
 }
 
 export default Image

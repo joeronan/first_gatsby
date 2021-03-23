@@ -6,19 +6,14 @@ import Image from "../components/image"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      marginBottom: `1em`,
-      marginTop: `1em`
+      margin: 'auto',
+      paddingTop: '25px',
+      paddingBottom: '25px',
+      width: '60%',
+      maxWidth: 400,
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 400,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <Image />
-    </div>
+    <Image />
   </header >
 )
 
