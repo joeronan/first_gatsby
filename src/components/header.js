@@ -1,28 +1,22 @@
-import PropTypes from "prop-types"
+import { Link } from "gatsby"
 import React from "react"
 import Image from "../components/image"
 
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      margin: 'auto',
-      paddingTop: '25px',
-      paddingBottom: '25px',
-      width: '60%',
-      maxWidth: 400,
-    }}
-  >
-    <Image />
-  </header >
+const Header = () => (
+  <>
+    <header
+      style={{
+        margin: 'auto',
+        paddingTop: '30px',
+        paddingBottom: '30px',
+        width: '70%',
+        maxWidth: 400,
+      }}
+    >
+      <Link to="/"><Image /></Link>
+    </header >
+  </>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

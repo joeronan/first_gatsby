@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: `Joe James Ronan`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    url: `https://www.joejamesronan.com`,
+    siteURL: `https://www.joejamesronan.com`,
+    description: `My personal blog going over all the projects I'm working on.`,
+    author: `Joe James Ronan`,
+    image: '/images/room.png',
+    twitterUsername: '@joejamesronan'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -22,10 +22,8 @@ export const postQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        path
         title
         date
-        description
       }
     }
   }

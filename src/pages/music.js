@@ -8,15 +8,11 @@ const Music = () => (
     <SEO title="Music" />
     <h2>Music</h2>
 
-    <p>I play guitar & banjo mostly, generally in the Piedmont Blues style (sometimes a bad Bluegrass style, sometimes an
-    even badder Clawhammer). I also have a Yamaha Reface CP, an Omnichord OM-82, and a Teenage Engineering PO-32 which I
-    mess around with. I normally just play for my own enjoyment but I want to be more confident with my playing so I'm
-    going to record & upload some clips.</p>
+    <p>I play guitar & banjo mostly, generally a very bad form of Piedmont Blues. I also have a couple synths, a drum machine, and I'm learning Logic Pro. I want to get better at my music so I'm gonna upload bits & pieces here.</p>
 
-    <p>The guitar below is an alternating thumb version of Lead Belly's Cotton Fields, the banjo is just some poor
-    improvising.</p>
+    <p>This clip is mostly to test how well soundcloud integrates into my website. It's one bad take of me playing Cotton Field by Lead Belly with even badder banjo improv over the top. Apologies.</p>
 
-    <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay"
+    <iframe title="Cotton Fields" width="100%" height="150" scrolling="no" frameBorder="no" allow="autoplay"
       src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/869031178%3Fsecret_token%3Ds-jSr6v7lC8cz&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
   </Layout>
 )

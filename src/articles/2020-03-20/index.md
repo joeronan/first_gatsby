@@ -5,4 +5,4 @@ title: "My First Gatsby Post"
 description: "The first test file"
 ---
 
-This is the first post
+This first post is to test if I can make markdown files that automatically get generated into proper pages.

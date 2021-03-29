@@ -3,6 +3,21 @@
   src: url("../fonts/cmunrm-webfont.woff");
 }
 
+.menu-element-link {
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+}
+
+.menu-element-link:hover {
+  background-color: rgba(0,0,0,0.9);
+  color: pink;
+}
+
+.menu-element-div {
+  background-color: inherit;
+  color: inherit;
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -25,6 +40,7 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
   background-color: #e8cea1;
+  /* overscroll-behavior-y: none; */
 }
 article,
 aside,
@@ -265,7 +281,7 @@ h2 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  /* margin-bottom: 1.45rem; */
+  margin-bottom: 1rem;
   color: inherit;
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
@@ -513,7 +529,7 @@ li > ol {
 li > ul {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+  /* margin-top: calc(1.45rem / 2); */
 }
 blockquote *:last-child {
   margin-bottom: 0;
