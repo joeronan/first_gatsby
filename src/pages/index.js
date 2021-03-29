@@ -12,6 +12,8 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" />
     <h2>Welcome!</h2>
 
+    <p>Fingers crossed this works!</p>
+
     <p>I'm a Data Scientist living in London who likes to build data visualisations. I'm currently making a dashboard for UK politics so stay tuned for more!</p>
 
     <p>In the meantime, there are two reasons for this website:</p>
