@@ -96,6 +96,7 @@ const MenuBody = () => {
         </MenuSet>
 
         <MenuSet title='Nerdy stuff'>
+          <MenuElement to="/uk-politics-map/">UK Politics Map</MenuElement>
           {data.allMarkdownRemark.edges.map(post => (
             <MenuElement key={post.node.id} to={post.node.frontmatter.path}>{post.node.frontmatter.date} {'///'} {post.node.frontmatter.title}</MenuElement>
           ))}
