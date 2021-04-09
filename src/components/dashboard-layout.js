@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from "prop-types"
 
 import Menu from "./menu"
+import "./layout.css"
 
 const DashboardLayout = ({ children }) => {
   return (
