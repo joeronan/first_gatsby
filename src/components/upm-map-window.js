@@ -4,8 +4,9 @@ import { Zoom, applyMatrixToPoint } from '@visx/zoom';
 import { localPoint } from '@visx/event';
 import { RectClipPath } from '@visx/clip-path';
 import { scaleLinear } from '@visx/scale';
-import Map from '../data/topo-wpc.svg';
+import UpmMap from './upm-map'
 import MiniMap from '../data/topo-eer.svg'
+import UpmMiniMap from './upm-mini-map'
 
 
 const UpmMapWindow = () => {
@@ -16,18 +17,21 @@ const UpmMapWindow = () => {
           node {
             ons_id
             constituency_name
+            mp_gender
           }
         }
       }
     }
   `)
 
+  const [getProperty, setProperty] = React.useState('')
+
   const height = 600
   const width = 400
 
   function constrain(transformMatrix, prevTransformMatrix) {
-    const min = applyMatrixToPoint(transformMatrix, { x: -500, y: -500 });
-    const max = applyMatrixToPoint(transformMatrix, { x: width + 500, y: height + 500 });
+    const min = applyMatrixToPoint(transformMatrix, { x: -100, y: -100 });
+    const max = applyMatrixToPoint(transformMatrix, { x: width + 100, y: height + 100 });
     if (max.x < width || max.y < height) {
       return prevTransformMatrix;
     }
@@ -56,7 +60,7 @@ const UpmMapWindow = () => {
             <svg height={height} width={width} style={{ border: '1px solid black' }}>
               <RectClipPath id="zoom-clip" width={width} height={height} />
               <g transform={`${zoom.toString()}`}>
-                <Map transform={`scale(0.5, 0.8)`} fill='hsla(0, 100%, 100%, 0.15)' stroke='black' strokeWidth='0.5px' />
+                <UpmMap width={width} height={height} property={getProperty} />
               </g>
 
               <rect
@@ -87,7 +91,8 @@ const UpmMapWindow = () => {
                           `}
               >
                 <rect width={width} height={height} fill="hsla(0, 100%, 0%, 0.666)" stroke='black' strokeWidth='5px' />
-                <MiniMap transform={`scale(0.5, 0.8)`} fill='rgb(232,207,167)' stroke='black' strokeWidth='2px' />
+                {/* <MiniMap transform={`scale(0.5, 0.8)`} fill='rgb(232,207,167)' stroke='black' strokeWidth='2px' /> */}
+                <UpmMiniMap width={width} height={height} />
                 <rect
                   width={width}
                   height={height}
@@ -104,17 +109,27 @@ const UpmMapWindow = () => {
             >
               <button
                 style={buttonStyle}
-                onClick={() => zoom.scale({ scaleX: 1.2, scaleY: 1.2 })}
+                onClick={() => zoom.scale({ scaleX: 1.5, scaleY: 1.5 })}
               >
                 +
               </button>
               <br />
               <button
                 style={buttonStyle}
-                onClick={() => zoom.scale({ scaleX: 0.8, scaleY: 0.8 })}
+                onClick={() => zoom.scale({ scaleX: 0.5, scaleY: 0.5 })}
               >
                 −
               </button>
+            </div>
+            <div>
+              <button
+                style={buttonStyle}
+                onClick={() => setProperty('PCON13CDO')}
+              >T</button>
+              <button
+                style={buttonStyle}
+                onClick={() => setProperty('PCON13NM')}
+              >N</button>
             </div>
           </div>
         )}
