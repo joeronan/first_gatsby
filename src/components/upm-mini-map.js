@@ -5,8 +5,6 @@ import topology from '../data/topo-eer.json';
 
 const world = topojson.feature(topology, topology.objects.eer)
 
-console.log(world)
-
 const UpmMiniMap = ({ width, height }) => {
 
   const centerX = width / 2;

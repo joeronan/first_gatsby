@@ -3,13 +3,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Zoom, applyMatrixToPoint } from '@visx/zoom';
 import { localPoint } from '@visx/event';
 import { RectClipPath } from '@visx/clip-path';
-import { scaleLinear } from '@visx/scale';
 import UpmMap from './upm-map'
-import MiniMap from '../data/topo-eer.svg'
 import UpmMiniMap from './upm-mini-map'
 
 
-const UpmMapWindow = () => {
+const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
   const data = useStaticQuery(graphql`
     query {
       allGeneralElection2019Csv {
@@ -23,6 +21,8 @@ const UpmMapWindow = () => {
       }
     }
   `)
+
+  console.log(setActiveConstituency)
 
   const [getProperty, setProperty] = React.useState('')
 
@@ -57,32 +57,22 @@ const UpmMapWindow = () => {
         {zoom => (
           <div style={{ position: 'relative' }}>
 
-            <svg height={height} width={width} style={{ border: '1px solid black' }}>
-              <RectClipPath id="zoom-clip" width={width} height={height} />
+            <svg height={height} width={width} style={{ border: '1px solid black' }}
+              onTouchStart={zoom.dragStart}
+              onTouchMove={zoom.dragMove}
+              onTouchEnd={zoom.dragEnd}
+              onMouseDown={zoom.dragStart}
+              onMouseMove={zoom.dragMove}
+              onMouseUp={zoom.dragEnd}
+              onMouseLeave={() => {
+                if (zoom.isDragging) zoom.dragEnd();
+              }}
+            >
               <g transform={`${zoom.toString()}`}>
-                <UpmMap width={width} height={height} property={getProperty} />
+                <UpmMap width={width} height={height} property={getProperty} setActiveConstituency={x => setActiveConstituency(x)} activeConstituency={activeConstituency} />
               </g>
 
-              <rect
-                width={width}
-                height={height}
-                rx={14}
-                fill="transparent"
-                onTouchStart={zoom.dragStart}
-                onTouchMove={zoom.dragMove}
-                onTouchEnd={zoom.dragEnd}
-                onMouseDown={zoom.dragStart}
-                onMouseMove={zoom.dragMove}
-                onMouseUp={zoom.dragEnd}
-                onMouseLeave={() => {
-                  if (zoom.isDragging) zoom.dragEnd();
-                }}
-                onDoubleClick={event => {
-                  const point = localPoint(event) || { x: 0, y: 0 };
-                  zoom.scale({ scaleX: 2, scaleY: 2, point });
-                }}
-              />
-
+              <RectClipPath id="zoom-clip" width={width} height={height} />
               <g
                 clipPath="url(#zoom-clip)"
                 transform={`
@@ -99,8 +89,9 @@ const UpmMapWindow = () => {
                   fill="white"
                   fillOpacity={0.2}
                   stroke="white"
-                  strokeWidth={4}
+                  strokeWidth='0.666px'
                   transform={zoom.toStringInvert()}
+                  vectorEffect='non-scaling-stroke'
                 />
               </g>
             </svg>
@@ -120,8 +111,19 @@ const UpmMapWindow = () => {
               >
                 −
               </button>
+              {/* <br />
+              <button
+                style={buttonStyle}
+                onClick={zoom.reset}
+              >
+                ↻
+              </button> */}
             </div>
             <div>
+              <button
+                style={buttonStyle}
+                onClick={() => setProperty('')}
+              >R</button>
               <button
                 style={buttonStyle}
                 onClick={() => setProperty('PCON13CDO')}

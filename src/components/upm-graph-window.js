@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import LineChart from "../components/line-chart"
 
-const UpmGraphWindow = () => {
+const UpmGraphWindow = ({ activeConstituency }) => {
   const data = useStaticQuery(graphql`
     query {
     allTestDataCsv {
@@ -19,6 +19,8 @@ const UpmGraphWindow = () => {
 
   return (
     <div style={{ width: '50%', position: 'absolute', left: 0 }}>
+      <p>Selected: {activeConstituency.join(' | ')}</p>
+
       <LineChart data={data} />
     </div>
   )

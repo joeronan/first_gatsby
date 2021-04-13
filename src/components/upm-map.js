@@ -1,12 +1,9 @@
 import React from "react"
-import Map from '../data/topo-wpc.svg';
 import { Mercator } from '@visx/geo';
 import * as topojson from 'topojson-client';
-import topology from '../data/topo-wpc.json';
+import topology from '../data/topo-wpc-2.json';
 
 const world = topojson.feature(topology, topology.objects.wpc)
-
-console.log(world)
 
 const colorDict = {
   'PCON13CDO': {
@@ -31,11 +28,33 @@ const color = (property, value) => {
   }
 }
 
-const UpmMap = ({ width, height, property }) => {
+const UpmMap = ({ width, height, property, setActiveConstituency, activeConstituency }) => {
 
   const centerX = width / 2;
   const centerY = height / 2;
   const scale = (width / 630) * 4800;
+
+  const [mouseDown, setMouseDown] = React.useState(false)
+
+  const handleMouseUp = (e, constituency) => {
+    if (activeConstituency.includes(constituency)) {
+      if (e.shiftKey) {
+        setActiveConstituency(activeConstituency.filter(x => (x !== constituency)))
+      } else {
+        if (activeConstituency.length === 1) {
+          setActiveConstituency([])
+        } else {
+          setActiveConstituency([constituency])
+        }
+      }
+    } else {
+      if (e.shiftKey) {
+        setActiveConstituency([...activeConstituency, constituency])
+      } else {
+        setActiveConstituency([constituency])
+      }
+    }
+  }
 
   return (
     <>
@@ -46,19 +65,23 @@ const UpmMap = ({ width, height, property }) => {
         center={[-2, 52.560556]}
       >
         {mercator => (
-          <g>
+          <>
             {mercator.features.map(({ feature, path }, i) => (
               <path
                 key={`map-feature-${i}`}
                 d={path || ''}
                 fill={color(property, feature.properties[property])}
                 stroke='black'
-                strokeWidth='0.5px'
+                strokeWidth={activeConstituency.includes(feature.properties['PCON13NM']) ? '2px' : '0.5px'}
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                vectorEffect='non-scaling-stroke'
+                onMouseDown={() => setMouseDown(true)}
+                onMouseMove={() => setMouseDown(false)}
+                onMouseUp={(e) => mouseDown ? handleMouseUp(e, feature.properties['PCON13NM']) : null}
               />
             ))}
-          </g>
+          </>
         )}
       </Mercator>
     </>

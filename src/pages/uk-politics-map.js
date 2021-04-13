@@ -7,18 +7,24 @@ import UpmGraphWindow from "../components/upm-graph-window"
 import UpmMapWindow from "../components/upm-map-window"
 
 
-const PoliticsMap = ({ data }) => (
-  <DashboardLayout>
-    <SEO title="UK Politics Map" />
-    <h2>Test</h2>
+const PoliticsMap = () => {
 
-    <p>Nice bit of sample text here.</p>
+  const [activeConstituency, setActiveConstituency] = React.useState([])
 
-    <div style={{ position: 'relative' }}>
-      <UpmGraphWindow />
-      <UpmMapWindow />
-    </div>
-  </DashboardLayout>
-)
+  return (
+    <DashboardLayout>
+      <SEO title="UK Politics Map" />
+      <h2>UK Politics Map</h2>
+
+      <p>Click on the map to select a constituency, shift click to select/deselect multiple.</p>
+
+      <div style={{ position: 'relative' }}>
+        <UpmGraphWindow activeConstituency={activeConstituency} />
+        {/* <UpmMapWindow setActiveConstituency={x => setActiveConstituency([...activeConstituency, x])} activeConstituency={activeConstituency} /> */}
+        <UpmMapWindow setActiveConstituency={x => setActiveConstituency(x)} activeConstituency={activeConstituency} />
+      </div>
+    </DashboardLayout>
+  )
+}
 
 export default PoliticsMap
