@@ -3,6 +3,14 @@
   src: url("../fonts/cmunrm-webfont.woff");
 }
 
+.active-constituency:hover {
+  stroke-width: 1.5px;
+}
+
+.constituency:hover {
+  stroke-width: 1px;
+}
+
 .menu-element-link {
   background-color: rgba(0,0,0,0.4);
   color: white;

@@ -69,6 +69,7 @@ const UpmMap = ({ width, height, property, setActiveConstituency, activeConstitu
             {mercator.features.map(({ feature, path }, i) => (
               <path
                 key={`map-feature-${i}`}
+                className={activeConstituency.includes(feature.properties['PCON13NM']) ? 'active-constituency' : 'constituency'}
                 d={path || ''}
                 fill={color(property, feature.properties[property])}
                 stroke='black'

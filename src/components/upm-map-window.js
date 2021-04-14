@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import { Zoom, applyMatrixToPoint } from '@visx/zoom';
-import { localPoint } from '@visx/event';
 import { RectClipPath } from '@visx/clip-path';
 import UpmMap from './upm-map'
 import UpmMiniMap from './upm-mini-map'
@@ -21,8 +20,6 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
       }
     }
   `)
-
-  console.log(setActiveConstituency)
 
   const [getProperty, setProperty] = React.useState('')
 
