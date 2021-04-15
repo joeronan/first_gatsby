@@ -3,6 +3,13 @@
   src: url("../fonts/cmunrm-webfont.woff");
 }
 
+.not-selectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .active-constituency:hover {
   stroke-width: 1.5px;
 }

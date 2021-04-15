@@ -1,8 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 
-import LineChart from "../components/line-chart"
-
 const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
   const data = useStaticQuery(graphql`
     query {

@@ -18,7 +18,7 @@ const PoliticsMap = () => {
 
       <p>Click on the map to select a constituency, shift click to select/deselect multiple.</p>
 
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative', width: '100%', height: '100%' }}>
         <UpmGraphWindow setActiveConstituency={x => setActiveConstituency(x)} activeConstituency={activeConstituency} />
         <UpmMapWindow setActiveConstituency={x => setActiveConstituency(x)} activeConstituency={activeConstituency} />
       </div>

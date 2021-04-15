@@ -5,6 +5,7 @@ import { RectClipPath } from '@visx/clip-path';
 import UpmMap from './upm-map'
 import UpmMiniMap from './upm-mini-map'
 
+const buttonStyle = { width: 30, height: 30, textAlign: 'center', background: 'rgb(232,207,167)', border: '1px black solid' }
 
 const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
   const data = useStaticQuery(graphql`
@@ -23,8 +24,10 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
 
   const [getProperty, setProperty] = React.useState('')
 
-  const height = 600
-  const width = 400
+  const [tooltip, setTooltip] = React.useState({ constituency: '', x: 0, y: 0 })
+
+  const height = 800
+  const width = 500
 
   function constrain(transformMatrix, prevTransformMatrix) {
     const min = applyMatrixToPoint(transformMatrix, { x: -100, y: -100 });
@@ -38,8 +41,6 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
     return transformMatrix;
   }
 
-  const buttonStyle = { width: 30, height: 30, textAlign: 'center', background: 'rgb(232,207,167)', border: '1px black solid' }
-
   return (
     <div style={{ width: '50%', position: 'absolute', right: 0 }}>
       <Zoom
@@ -52,9 +53,11 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
         constrain={constrain}
       >
         {zoom => (
-          <div style={{ position: 'relative' }}>
-
-            <svg height={height} width={width} style={{ border: '1px solid black' }}
+          <>
+            <svg
+              height={height}
+              width={width}
+              style={{ border: '1px solid black', position: 'relative' }}
               onTouchStart={zoom.dragStart}
               onTouchMove={zoom.dragMove}
               onTouchEnd={zoom.dragEnd}
@@ -65,8 +68,21 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
                 if (zoom.isDragging) zoom.dragEnd();
               }}
             >
+              <rect
+                height={height}
+                width={width}
+                onClick={() => setActiveConstituency([])}
+                opacity='0'
+              />
               <g transform={`${zoom.toString()}`}>
-                <UpmMap width={width} height={height} property={getProperty} setActiveConstituency={x => setActiveConstituency(x)} activeConstituency={activeConstituency} />
+                <UpmMap
+                  width={width}
+                  height={height}
+                  property={getProperty}
+                  setActiveConstituency={x => setActiveConstituency(x)}
+                  activeConstituency={activeConstituency}
+                  tooltip={tooltip}
+                  setTooltip={setTooltip} />
               </g>
 
               <RectClipPath id="zoom-clip" width={width} height={height} />
@@ -78,7 +94,6 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
                           `}
               >
                 <rect width={width} height={height} fill="hsla(0, 100%, 0%, 0.666)" stroke='black' strokeWidth='5px' />
-                {/* <MiniMap transform={`scale(0.5, 0.8)`} fill='rgb(232,207,167)' stroke='black' strokeWidth='2px' /> */}
                 <UpmMiniMap width={width} height={height} />
                 <rect
                   width={width}
@@ -91,7 +106,13 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
                   vectorEffect='non-scaling-stroke'
                 />
               </g>
+
+              {tooltip['constituency'] && <g transform={`translate(${tooltip['x'] + 14}, ${tooltip['y'] - 14})`}>
+                <rect transform='translate(-2,-14)' width='16' height='16' fill='hsla(0, 100%, 100%, 0.9)' />
+                <text className='not-selectable'>{tooltip['constituency']}</text></g>
+              }
             </svg>
+
             <div
               style={{ position: 'absolute', left: width - 40, top: 15 }}
             >
@@ -130,7 +151,7 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
                 onClick={() => setProperty('PCON13NM')}
               >N</button>
             </div>
-          </div>
+          </>
         )}
       </Zoom>
     </div >
