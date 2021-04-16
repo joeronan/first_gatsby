@@ -23,13 +23,18 @@ const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
   const fullConstituencyList = data.allGeneralElection2019Csv.edges.map(x => x.node.constituency_name)
 
   return (
-    <div style={{ width: '50%', position: 'absolute', left: 0 }}>
-      {activeConstituency.map(constituency => (
-        <button
-          onClick={() => setActiveConstituency(activeConstituency.filter(x => (x !== constituency)))}>
-          {constituency}
-        </button>
-      ))}
+    <div style={{
+      width: 'calc(100vw - 80vh - 20px)',
+      height: '100vh',
+      position: 'absolute',
+      left: 0,
+      padding: '10px 10px 75px 10px',
+      overflowY: 'auto'
+    }}>
+
+      <h2>UK Politics Map</h2>
+
+      <p>Click on the map to select a constituency, shift click to select/deselect multiple.</p>
 
       <form
         onSubmit={(e) => {
@@ -39,10 +44,13 @@ const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
           }
           e.preventDefault()
         }}
+        style={{ marginBottom: '7px' }}
       >
         <input
           style={{
-            width: '100%'
+            width: '100%',
+            border: '1px black solid',
+            background: 'hsla(0, 100%, 100%, 0.3)'
           }}
           onChange={(e) => {
             setInputState(e.target.value)
@@ -53,6 +61,16 @@ const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
           value={inputState}>
         </input>
       </form>
+
+      {activeConstituency.map(constituency => (
+        <button
+          className='standard-button'
+          style={{ margin: '0px 7px 7px 0px' }}
+          onClick={() => setActiveConstituency(activeConstituency.filter(x => (x !== constituency)))}>
+          {constituency} | ✕
+        </button>
+      ))}
+
       <datalist id='constituency-list'>
         {fullConstituencyList
           .filter(e => !activeConstituency.includes(e))

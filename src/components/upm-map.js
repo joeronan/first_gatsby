@@ -33,7 +33,7 @@ const UpmMap = ({ tooltip, setTooltip, width, height, property, setActiveConstit
 
   const centerX = width / 2;
   const centerY = height / 2;
-  const scale = (width / 630) * 4800;
+  const scale = width * 6;
 
   const [mouseDown, setMouseDown] = React.useState(false)
   const [mouseDownStationary, setMouseDownStationary] = React.useState(false)

@@ -9,7 +9,7 @@ const UpmMiniMap = ({ width, height }) => {
 
   const centerX = width / 2;
   const centerY = height / 2;
-  const scale = (width / 630) * 4800;
+  const scale = width * 6;
 
   return (
     <>

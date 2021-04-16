@@ -3,6 +3,29 @@
   src: url("../fonts/cmunrm-webfont.woff");
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsla(0, 100%, 100%, 0.05);
+  border-left: 1px hsla(0, 100%, 0%, 0.05) solid;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsla(0, 100%, 0%, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(0, 100%, 0%, 0.4);
+}
+
+.standard-button {
+  text-align: center;
+  background: rgb(232,207,167);
+  border: 1px black solid;
+}
+
 .not-selectable {
   -webkit-user-select: none;
   -moz-user-select: none;

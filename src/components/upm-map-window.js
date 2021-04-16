@@ -1,37 +1,24 @@
 import React from 'react'
-import { useStaticQuery, graphql } from "gatsby"
 import { Zoom, applyMatrixToPoint } from '@visx/zoom';
 import { RectClipPath } from '@visx/clip-path';
 import UpmMap from './upm-map'
 import UpmMiniMap from './upm-mini-map'
+import { useWindowDimensions } from './utils.js'
 
 const buttonStyle = { width: 30, height: 30, textAlign: 'center', background: 'rgb(232,207,167)', border: '1px black solid' }
 
 const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      allGeneralElection2019Csv {
-        edges {
-          node {
-            ons_id
-            constituency_name
-            mp_gender
-          }
-        }
-      }
-    }
-  `)
 
-  const [getProperty, setProperty] = React.useState('')
-
+  const [property, setProperty] = React.useState('')
   const [tooltip, setTooltip] = React.useState({ constituency: '', x: 0, y: 0 })
 
-  const height = 800
-  const width = 500
+  const { height, fullWidth } = useWindowDimensions()
+  const width = height * 0.8
+
 
   function constrain(transformMatrix, prevTransformMatrix) {
-    const min = applyMatrixToPoint(transformMatrix, { x: -100, y: -100 });
-    const max = applyMatrixToPoint(transformMatrix, { x: width + 100, y: height + 100 });
+    const min = applyMatrixToPoint(transformMatrix, { x: -width, y: -height });
+    const max = applyMatrixToPoint(transformMatrix, { x: 2 * width, y: 2 * height });
     if (max.x < width || max.y < height) {
       return prevTransformMatrix;
     }
@@ -42,14 +29,10 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
   }
 
   return (
-    <div style={{ width: '50%', position: 'absolute', right: 0 }}>
+    <div style={{ position: 'absolute', right: 0 }}>
       <Zoom
         height={height}
         width={width}
-        scaleXMin={1 / 2}
-        scaleXMax={4}
-        scaleYMin={1 / 2}
-        scaleYMax={4}
         constrain={constrain}
       >
         {zoom => (
@@ -57,7 +40,7 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
             <svg
               height={height}
               width={width}
-              style={{ border: '1px solid black', position: 'relative' }}
+              style={{ borderLeft: '1px solid black', position: 'relative', display: 'block' }}
               onTouchStart={zoom.dragStart}
               onTouchMove={zoom.dragMove}
               onTouchEnd={zoom.dragEnd}
@@ -78,7 +61,7 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
                 <UpmMap
                   width={width}
                   height={height}
-                  property={getProperty}
+                  property={property}
                   setActiveConstituency={x => setActiveConstituency(x)}
                   activeConstituency={activeConstituency}
                   tooltip={tooltip}
@@ -114,7 +97,7 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
             </svg>
 
             <div
-              style={{ position: 'absolute', left: width - 40, top: 15 }}
+              style={{ position: 'absolute', right: 15, top: 15 }}
             >
               <button
                 style={buttonStyle}
@@ -137,7 +120,9 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
                 ↻
               </button> */}
             </div>
-            <div>
+            <div
+              style={{ position: 'absolute', bottom: 15, left: 15 }}
+            >
               <button
                 style={buttonStyle}
                 onClick={() => setProperty('')}
