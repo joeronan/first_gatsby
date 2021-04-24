@@ -22,7 +22,7 @@
 
 .standard-button {
   text-align: center;
-  background: rgb(232,207,167);
+  background: hsla(0, 100%, 100%, 0.15);
   border: 1px black solid;
 }
 
