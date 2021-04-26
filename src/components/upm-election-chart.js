@@ -18,12 +18,12 @@ const UpmElectionChart = ({ data, activeConstituency, setActiveConstituency }) =
 
   return (
     <div>
+      <p style={{ marginTop: '100px' }}><b><u>Note:</u></b> The plot below is currently meaningless as I'm still building custom plots.</p>
       <button
         className='standard-button'
-        style={{ margin: '0px 0px 7px 0px' }}
+        style={{ margin: '0px 0px 7px 0px', width: '172px', textAlign: 'left' }}
         onClick={handleClick}>
-        Toggle X
-        {columns.join(' | ')}
+        Toggle Non-Voters {columns.includes('non_voters') ? '✓' : '✗'}
       </button>
       <br />
       <ParentSize>{({ width }) => <BarChart width={width} height={60 + (30 * activeConstituency.length)} xMaxValue={200000} data={data.allGeneralElection2019Csv} indexColumn={index_column} indices={activeConstituency} columns={columns} />}</ParentSize>

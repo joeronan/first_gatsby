@@ -124,17 +124,17 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
               style={{ position: 'absolute', bottom: 15, left: 15 }}
             >
               <button
-                style={buttonStyle}
+                className='standard-button'
                 onClick={() => setProperty('')}
-              >R</button>
+              >No Colour</button>
               <button
-                style={buttonStyle}
+                className='standard-button'
                 onClick={() => setProperty('PCON13CDO')}
-              >T</button>
+              >Random Colouring 1</button>
               <button
-                style={buttonStyle}
+                className='standard-button'
                 onClick={() => setProperty('PCON13NM')}
-              >N</button>
+              >Random Colouring 2</button>
             </div>
           </>
         )}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import UpmSummaryTable from './upm-summary-table'
 import UpmElectionChart from './upm-election-chart'
 
@@ -89,13 +89,22 @@ const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
 
       {(activeConstituency.length === 0) &&
         <div style={{ margin: '50px 30px 0px 30px', padding: '10px 10px 10px 10px', border: '1px solid black', background: 'hsla(0,100%,0%,0.05)' }}>
+          <p><b><u>Disclaimer:</u></b> This is a work in progress project.</p>
+
           <h2>Welcome!</h2>
 
-          <p>Give overview</p>
+          <p>This map is intended for anyone who's read an article about a constituency or an MP and thought "I know nothing about this place". There isn't yet a service which gives this information in a nice format. <a href="https://en.wikipedia.org/wiki/United_Kingdom_Parliament_constituencies">Wikipedia</a> gives a full breakdown of the election history but little else while <a href="https://commonslibrary.parliament.uk/constituency-dashboard/">the government's dashboard</a> is very dry and less focused on politics. If you're interested in how this dashboard was built check out my <Link to="/uk-politics-map-dev-log/">dev log</Link> and the <a href="https://github.com/joeronan/personal_website">github repo</a>.</p>
 
-          <p>Click on the map to select a constituency, <b>shift click</b> to select/deselect multiple, or search for a constituency using the search bar bove.</p>
+          <h3>Controls:</h3>
 
-          <p>I've you're interested in the making of this page, see here (MAKE THIS A LINK) for the dev log.</p>
+          <p>Click on the map to select a single constituency, or shift click to select/deselect multiple. The search bar above can also be used to select/deselect constituencies.</p>
+
+          <p>Click and drag to move the map. Use the scroll wheel or buttons in the top right to zoom.</p>
+
+          <h3>Example Use:</h3>
+
+          <p>On 3rd March 2021 the UK government announced it would be moving 750 jobs to Darlington as part of its Spring budget. This map can be used to understand what motivated the decision and understand to what extent this was a political or economic choice. We can find Darlington by using the search tool, then compare it to nearby areas by selecting multiple constituencies or by looking at different map colourings.</p>
+
         </div>
       }
 

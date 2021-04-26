@@ -71,7 +71,6 @@ const MenuBody = () => {
             path
             title
             date
-            description
           }
           excerpt
         }
@@ -97,10 +96,12 @@ const MenuBody = () => {
 
         <MenuSet title='Nerdy stuff'>
           <MenuElement to="/uk-politics-map/">UK Politics Map</MenuElement>
-          {data.allMarkdownRemark.edges.map(post => (
-            <MenuElement key={post.node.id} to={post.node.frontmatter.path}>{post.node.frontmatter.date} {'///'} {post.node.frontmatter.title}</MenuElement>
-          ))}
-          <MenuElement to="/lorem-ipsum/">Lorem Ipsum</MenuElement>
+          <MenuElement to="/uk-politics-map-dev-log/">UK Politics Map Dev Log</MenuElement>
+          {data.allMarkdownRemark.edges.map(post => {
+            if (post.node.frontmatter.path != '/lorem-ipsum-article') {
+              return (<MenuElement key={post.node.id} to={post.node.frontmatter.path}>{post.node.frontmatter.date} {'///'} {post.node.frontmatter.title}</MenuElement>)
+            }
+          })}
         </MenuSet>
 
         <MenuSet title='Artsy Stuff'>

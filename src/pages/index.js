@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 
@@ -12,22 +12,16 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" />
     <h2>Welcome!</h2>
 
-    <p>Fingers crossed this works!</p>
+    <p>I'm a Data Scientist living in London who likes to build data visualisations. I have two work in progress projects up on this website:</p>
 
-    <p>I'm a Data Scientist living in London who likes to build data visualisations. I'm currently making a dashboard for UK politics so stay tuned for more!</p>
+    <ul>
+      <li><Link to="/uk-politics-map/">A dashboard for understanding UK constituencies</Link></li>
+      <li><Link to="/where-are-britains-elite/">An article trying to map Britain's elite</Link></li>
+    </ul>
 
-    <p>In the meantime, there are two reasons for this website:</p>
-    <ol>
-      <li>To build a portfolio of the stuff I spend my time on</li>
-      <li>For me to learn a bunch of tech including:
-        <ul>
-          <li><code>HTML</code>/<code>CSS</code>/<code>JavaScript</code></li>
-          <li><code>React</code> in particular the framework <code>Gatsby</code></li>
-          <li><code>D3.js</code></li>
-        </ul>
-      </li>
-    </ol>
-    <p>Click on the elliptic stars to find the website's menu. Once I've got some interesting work to show off I'll be sure to link it here too!</p>
+    <p>I'm always interested in hearing opportunities so feel free to contact me on <a href="https://www.linkedin.com/in/joe-ronan/">LinkedIn</a> or <a href="https://github.com/joeronan">Github</a>.</p>
+
+    <p>You can click on the elliptic stars to find the website's menu.</p>
 
     <p>Thanks for visiting!</p>
 
