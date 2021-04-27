@@ -61,7 +61,10 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
               onMouseMove={zoom.dragMove}
               onMouseUp={zoom.dragEnd}
               onMouseLeave={() => {
-                if (zoom.isDragging) zoom.dragEnd();
+                if (zoom.isDragging) {
+                  zoom.dragEnd()
+                  setMouseDown(false)
+                };
               }}
             >
               <g transform={`${zoom.toString()}`}>
