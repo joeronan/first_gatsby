@@ -103,7 +103,7 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
               </g>
 
               {tooltip['constituency'] && <g transform={`translate(${tooltip['x'] + 14}, ${tooltip['y'] - 14})`}>
-                <rect transform='translate(-2,-14)' width='16' height='16' fill='hsla(0, 100%, 100%, 0.9)' />
+                <rect className='not-selectable' transform='translate(-2,-14)' width='16' height='16' fill='hsla(0, 100%, 100%, 0.9)' />
                 <text className='not-selectable'>{tooltip['constituency']}</text></g>
               }
             </svg>
