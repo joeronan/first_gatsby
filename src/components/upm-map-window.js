@@ -5,15 +5,27 @@ import UpmMap from './upm-map'
 import UpmMiniMap from './upm-mini-map'
 import { useWindowDimensions } from './utils.js'
 
-const buttonStyle = { width: 30, height: 30, textAlign: 'center', background: 'rgb(232,207,167)', border: '1px black solid' }
-
 const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
 
   const [property, setProperty] = React.useState('')
   const [tooltip, setTooltip] = React.useState({ constituency: '', x: 0, y: 0 })
+  const [mouseDown, setMouseDown] = React.useState(false)
 
-  const { height, fullWidth } = useWindowDimensions()
-  const width = height * 0.8
+  const wheelDelta = (event) => {
+    if (mouseDown) {
+      return ({ scaleX: 1, scaleY: 1 })
+    } else {
+      if (-event.deltaY > 0) {
+        return ({ scaleX: 1.125, scaleY: 1.125 })
+      } else {
+        return ({ scaleX: 0.875, scaleY: 0.875 })
+      }
+    }
+  }
+
+  const { fullWidth, fullHeight } = useWindowDimensions()
+  const width = fullWidth * 0.4
+  const height = fullHeight * 1.0
 
 
   function constrain(transformMatrix, prevTransformMatrix) {
@@ -34,6 +46,7 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
         height={height}
         width={width}
         constrain={constrain}
+        wheelDelta={wheelDelta}
       >
         {zoom => (
           <>
@@ -51,12 +64,6 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
                 if (zoom.isDragging) zoom.dragEnd();
               }}
             >
-              <rect
-                height={height}
-                width={width}
-                onClick={() => setActiveConstituency([])}
-                opacity='0'
-              />
               <g transform={`${zoom.toString()}`}>
                 <UpmMap
                   width={width}
@@ -64,6 +71,8 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
                   property={property}
                   setActiveConstituency={x => setActiveConstituency(x)}
                   activeConstituency={activeConstituency}
+                  mouseDown={mouseDown}
+                  setMouseDown={setMouseDown}
                   tooltip={tooltip}
                   setTooltip={setTooltip} />
               </g>
@@ -100,14 +109,14 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
               style={{ position: 'absolute', right: 15, top: 15 }}
             >
               <button
-                style={buttonStyle}
+                className='square-button'
                 onClick={() => zoom.scale({ scaleX: 1.5, scaleY: 1.5 })}
               >
                 +
               </button>
               <br />
               <button
-                style={buttonStyle}
+                className='square-button'
                 onClick={() => zoom.scale({ scaleX: 0.5, scaleY: 0.5 })}
               >
                 −

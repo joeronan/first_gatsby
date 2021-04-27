@@ -8,16 +8,16 @@ import React from 'react';
 
 export function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = React.useState({
-    width: 100,
-    height: 100
+    fullWidth: 100,
+    fullHeight: 100
   });
 
   React.useEffect(() => {
     function getWindowDimensions() {
-      const { innerWidth: width, innerHeight: height } = window;
+      const { innerWidth: fullWidth, innerHeight: fullHeight } = window;
       return {
-        width,
-        height
+        fullWidth,
+        fullHeight
       };
     }
 

@@ -29,37 +29,63 @@ const color = (property, value) => {
   }
 }
 
-const UpmMap = ({ tooltip, setTooltip, width, height, property, setActiveConstituency, activeConstituency }) => {
+const UpmMap = ({ tooltip, setTooltip, width, height, property, setActiveConstituency, activeConstituency, setMouseDown, mouseDown }) => {
 
   const centerX = width / 2;
   const centerY = height / 2;
   const scale = width * 6;
 
-  const [mouseDown, setMouseDown] = React.useState(false)
   const [mouseDownStationary, setMouseDownStationary] = React.useState(false)
 
   const handleMouseUp = (e, constituency) => {
-    if (activeConstituency.includes(constituency)) {
-      if (e.shiftKey) {
-        setActiveConstituency(activeConstituency.filter(x => (x !== constituency)))
+    console.log(constituency)
+    if (!constituency) {
+      console.log(constituency)
+      setActiveConstituency([])
+    } else {
+      if (activeConstituency.includes(constituency)) {
+        if (e.shiftKey) {
+          setActiveConstituency(activeConstituency.filter(x => (x !== constituency)))
+        } else {
+          if (activeConstituency.length === 1) {
+            setActiveConstituency([])
+          } else {
+            setActiveConstituency([constituency])
+          }
+        }
       } else {
-        if (activeConstituency.length === 1) {
-          setActiveConstituency([])
+        if (e.shiftKey) {
+          setActiveConstituency([...activeConstituency, constituency])
         } else {
           setActiveConstituency([constituency])
         }
-      }
-    } else {
-      if (e.shiftKey) {
-        setActiveConstituency([...activeConstituency, constituency])
-      } else {
-        setActiveConstituency([constituency])
       }
     }
   }
 
   return (
     <>
+      <rect
+        height={height}
+        width={width}
+        opacity='0'
+        onMouseDown={() => {
+          setMouseDown(true)
+          setMouseDownStationary(true)
+        }}
+        onMouseMove={() => {
+          if (mouseDown) {
+            setMouseDownStationary(false)
+          }
+        }}
+        onMouseUp={(e) => {
+          if (mouseDownStationary) {
+            handleMouseUp(e, '')
+          }
+          setMouseDown(false)
+          setMouseDownStationary(false)
+        }}
+      />
       <Mercator
         data={world.features}
         scale={scale}
@@ -99,6 +125,7 @@ const UpmMap = ({ tooltip, setTooltip, width, height, property, setActiveConstit
                     handleMouseUp(e, feature.properties['PCON13NM'])
                   }
                   setMouseDown(false)
+                  setMouseDownStationary(false)
                 }}
                 onMouseOut={() => !mouseDown ? setTooltip({ constituency: '', x: 0, y: 0 }) : null}
               />

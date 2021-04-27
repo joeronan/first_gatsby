@@ -22,8 +22,17 @@
 
 .standard-button {
   text-align: center;
-  background: hsla(0, 100%, 100%, 0.15);
+  /* background: hsla(0, 100%, 100%, 0.15); */
+  background: rgb(232, 207, 167);
   border: 1px black solid;
+}
+
+.square-button {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background: rgb(232,207,167);
+  border: 1px black solid ;
 }
 
 .not-selectable {

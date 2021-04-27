@@ -34,7 +34,7 @@ const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
 
   return (
     <div style={{
-      width: 'calc(100vw - 80vh - 20px)',
+      width: 'calc(60vw - 20px)',
       height: '100vh',
       position: 'absolute',
       left: 0,
@@ -89,15 +89,15 @@ const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
 
       {(activeConstituency.length === 0) &&
         <div style={{ margin: '50px 30px 0px 30px', padding: '10px 10px 10px 10px', border: '1px solid black', background: 'hsla(0,100%,0%,0.05)' }}>
-          <p><b><u>Disclaimer:</u></b> This is a work in progress project.</p>
+          <p><b><u>Disclaimer:</u></b> This is a work in progress project. I'm currently focusing on England but the rest of the UK is coming soon!</p>
 
           <h2>Welcome!</h2>
 
-          <p>This map is intended for anyone who's read an article about a constituency or an MP and thought "I know nothing about this place". There isn't yet a service which gives this information in a nice format. <a href="https://en.wikipedia.org/wiki/United_Kingdom_Parliament_constituencies">Wikipedia</a> gives a full breakdown of the election history but little else while <a href="https://commonslibrary.parliament.uk/constituency-dashboard/">the government's dashboard</a> is very dry and less focused on politics. If you're interested in how this dashboard was built check out my <Link to="/uk-politics-map-dev-log/">dev log</Link> and the <a href="https://github.com/joeronan/personal_website">github repo</a>.</p>
+          <p>This map is intended for anyone who's read an article about a constituency or an MP and thought "I know nothing about this place". There isn't yet a service which gives this information in a nice format. <a href="https://en.wikipedia.org/wiki/United_Kingdom_Parliament_constituencies">Wikipedia</a> gives a full breakdown of the election history but little else while the government's dashboards are dry and split up <a href="https://commonslibrary.parliament.uk/constituency-data-election-results/">politics</a> and <a href="https://commonslibrary.parliament.uk/constituency-dashboard/">administration</a>. If you're interested in how this dashboard was built check out my <Link to="/uk-politics-map-dev-log/">dev log</Link> and the <a href="https://github.com/joeronan/personal_website">github repo</a>.</p>
 
           <h3>Controls:</h3>
 
-          <p>Click on the map to select a single constituency, or shift click to select/deselect multiple. The search bar above can also be used to select/deselect constituencies.</p>
+          <p>Click on the map to select a single constituency, or shift click to select/deselect multiple. The search bar above can also be used to select/deselect constituencies. Click in the sea to deselect all.</p>
 
           <p>Click and drag to move the map. Use the scroll wheel or buttons in the top right to zoom.</p>
 
