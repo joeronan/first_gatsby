@@ -3,6 +3,31 @@
   src: url("../fonts/cmunrm-webfont.woff");
 }
 
+@font-face {
+  font-family: "Crimson Text";
+  src: url("../fonts/CrimsonText-Regular.ttf");
+}
+
+/* unvisited link */
+a:link {
+  color: hsl(0, 0%, 60%);
+}
+
+/* visited link */
+a:visited {
+  color: hsl(0, 0%, 40%);
+}
+
+/* mouse over link */
+a:hover {
+  color: hsl(330, 100%, 71%);
+}
+
+/* selected link */
+a:active {
+  color: hsl(330, 100%, 61%);
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -55,8 +80,13 @@
   background-color: rgba(0,0,0,0.4);
   color: white;
 }
-
-.menu-element-link:hover {
+.menu-element-link:link {
+  color: hsl(0, 0%, 100%);
+}
+.menu-element-link:visited {
+  color: hsl(0, 0%, 100%);
+}
+.menu-element-link:hover,.menu-element-link:active {
   background-color: rgba(0,0,0,0.9);
   color: pink;
 }
@@ -78,7 +108,9 @@ body {
   /* -webkit-font-smoothing: antialiased; */
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: "CM", georgia, serif;
+  /* font-family: "CM", georgia, serif; */
+  font-family: "Crimson Text", georgia, serif;
+  /* font-family: palatino, georgia, serif; */
   font-size: 0.95em;
   font-weight: normal;
   word-wrap: break-word;

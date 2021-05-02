@@ -93,7 +93,7 @@ const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
 
           <h2>Welcome!</h2>
 
-          <p>This map is intended for anyone who's read an article about a constituency or an MP and thought "I know nothing about this place". There isn't yet a service which gives this information in a nice format. <a href="https://en.wikipedia.org/wiki/United_Kingdom_Parliament_constituencies">Wikipedia</a> gives a full breakdown of the election history but little else while the government's dashboards are dry and split up <a href="https://commonslibrary.parliament.uk/constituency-data-election-results/">politics</a> and <a href="https://commonslibrary.parliament.uk/constituency-dashboard/">administration</a>. If you're interested in how this dashboard was built check out my <Link to="/uk-politics-map-dev-log/">dev log</Link> and the <a href="https://github.com/joeronan/personal_website">github repo</a>.</p>
+          <p>This map is intended for anyone who's ever read an article about a constituency and thought "I know nothing about this place". If you're interested in how this dashboard was built check out my <Link to="/uk-politics-map-dev-log/">dev log</Link> and the <a href="https://github.com/joeronan/personal_website">github repo</a>.</p>
 
           <h3>Controls:</h3>
 
