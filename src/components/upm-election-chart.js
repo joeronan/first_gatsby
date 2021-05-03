@@ -21,7 +21,7 @@ const UpmElectionChart = ({ data, activeConstituency, setActiveConstituency }) =
       <p style={{ marginTop: '100px' }}><b><u>Note:</u></b> The plot below is currently meaningless as I'm still building custom plots.</p>
       <button
         className='standard-button'
-        style={{ margin: '0px 0px 7px 0px', width: '172px', textAlign: 'left' }}
+        style={{ margin: '0px 0px 7px 0px', width: '164px', textAlign: 'left' }}
         onClick={handleClick}>
         Toggle Non-Voters {columns.includes('non_voters') ? '✓' : '✗'}
       </button>
