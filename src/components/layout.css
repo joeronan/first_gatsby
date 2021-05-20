@@ -8,6 +8,12 @@
   src: url("../fonts/CrimsonText-Regular.ttf");
 }
 
+.tooltip {
+  background-color: hsla(0, 0%, 100%, 0.9);
+  padding: 0px 10px 0px 10px;
+  position: fixed;
+}
+
 /* unvisited link */
 a:link {
   color: hsl(0, 0%, 60%);

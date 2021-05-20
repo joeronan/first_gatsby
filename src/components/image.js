@@ -8,7 +8,7 @@ const Image = () => {
       headerImage: file(relativePath: { eq: "header.png" }) {
         childImageSharp {
           fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }

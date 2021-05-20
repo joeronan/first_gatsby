@@ -1,6 +1,5 @@
 import React from "react"
 import { Mercator } from '@visx/geo';
-import { localPoint } from '@visx/event';
 import * as topojson from 'topojson-client';
 import topology from '../data/topo-wpc-2.json';
 
@@ -113,11 +112,9 @@ const UpmMap = ({ tooltip, setTooltip, width, height, property, setActiveConstit
                 onMouseMove={(e) => {
                   if (mouseDown) {
                     setMouseDownStationary(false)
-                    const point = localPoint(e) || { x: 0, y: 0 }
-                    setTooltip({ constituency: tooltip['constituency'], x: point.x, y: point.y })
+                    setTooltip({ constituency: tooltip['constituency'], x: e.clientX, y: e.clientY })
                   } else {
-                    const point = localPoint(e) || { x: 0, y: 0 }
-                    setTooltip({ constituency: feature.properties['PCON13NM'], x: point.x, y: point.y })
+                    setTooltip({ constituency: feature.properties['PCON13NM'], x: e.clientX, y: e.clientY })
                   }
                 }}
                 onMouseUp={(e) => {

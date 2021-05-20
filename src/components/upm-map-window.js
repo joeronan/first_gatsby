@@ -9,6 +9,7 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
 
   const [property, setProperty] = React.useState('')
   const [tooltip, setTooltip] = React.useState({ constituency: '', x: 0, y: 0 })
+  const [tooltipDiv, setTooltipDiv] = React.useState({ constituency: '', x: 0, y: 0 })
   const [mouseDown, setMouseDown] = React.useState(false)
 
   const wheelDelta = (event) => {
@@ -41,7 +42,8 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
   }
 
   return (
-    <div style={{ position: 'absolute', right: 0 }}>
+    // onMouseMove={e => { setTooltipDiv({ constituency: tooltipDiv.constituency, x: e.clientX, y: e.clientY }) }}
+    <div style={{ position: 'absolute', right: 0 }} >
       <Zoom
         height={height}
         width={width}
@@ -76,8 +78,8 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
                   activeConstituency={activeConstituency}
                   mouseDown={mouseDown}
                   setMouseDown={setMouseDown}
-                  tooltip={tooltip}
-                  setTooltip={setTooltip} />
+                  tooltip={tooltipDiv}
+                  setTooltip={setTooltipDiv} />
               </g>
 
               <RectClipPath id="zoom-clip" width={width} height={height} />
@@ -148,6 +150,11 @@ const UpmMapWindow = ({ setActiveConstituency, activeConstituency }) => {
                 onClick={() => setProperty('PCON13NM')}
               >Random Colouring 2</button>
             </div>
+            {tooltipDiv['constituency'] &&
+              <div className='not-selectable tooltip' style={{ top: tooltipDiv.y - 30, left: tooltipDiv.x + 10 }}>
+                {tooltipDiv.constituency}
+              </div>
+            }
           </>
         )}
       </Zoom>

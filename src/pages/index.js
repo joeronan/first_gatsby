@@ -42,7 +42,7 @@ query {
   roomImage: file(relativePath: { eq: "room.png" }) {
     childImageSharp {
       fluid(maxWidth: 333) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_noBase64
       }
     }
   }
