@@ -9,6 +9,12 @@ module.exports = {
     twitterUsername: '@joejamesronan'
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-react-leaflet',
+      options: {
+        linkStyles: true
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
