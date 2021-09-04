@@ -12,11 +12,10 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" />
     <h2>Welcome!</h2>
 
-    <p>I'm a Data Scientist living in London who likes to build data visualisations. I have two work in progress projects up on this website:</p>
+    <p>I'm a Data Scientist living in London who likes to build data visualisations. I have one work in progress project up on this website:</p>
 
     <ul>
       <li><Link to="/uk-politics-map/">A dashboard for understanding UK constituencies</Link></li>
-      <li><Link to="/where-are-britains-elite/">An article trying to map Britain's elite</Link></li>
     </ul>
 
     <p>I'm always interested in hearing opportunities so feel free to contact me on <a href="https://www.linkedin.com/in/joe-ronan/">LinkedIn</a> or <a href="https://github.com/joeronan">Github</a>.</p>
