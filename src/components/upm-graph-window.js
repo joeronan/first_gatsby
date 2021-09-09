@@ -6,12 +6,13 @@ import UpmElectionChart from './upm-election-chart'
 const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
   const data = useStaticQuery(graphql`
     query {
-      allGeneralElection2019Csv(filter: {country_name: {eq: "England"}}) {
+      allDataCsv(filter: {country_name: {eq: "England"}}) {
         edges {
           node {
             ons_id
             constituency_name
             mp_gender
+            mp_fullname
             mp_firstname
             mp_surname
             region_name
@@ -20,6 +21,22 @@ const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
             electorate
             valid_votes
             invalid_votes
+            total_votes
+            non_votes
+            con
+            lab
+            ld
+            brexit
+            green
+            snp
+            pc
+            dup
+            sf
+            sdlp
+            uup
+            alliance
+            other
+            they_work_for_you_url
           }
         }
       }
@@ -29,8 +46,10 @@ const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
   console.log(data)
 
   const [inputState, setInputState] = React.useState('')
+  const [inputMPState, setInputMPState] = React.useState('')
 
-  const fullConstituencyList = data.allGeneralElection2019Csv.edges.map(x => x.node.constituency_name)
+  const fullConstituencyList = data.allDataCsv.edges.map(x => x.node.constituency_name)
+  const fullMPList = data.allDataCsv.edges.map(x => x.node.mp_fullname)
 
   return (
     <div style={{
@@ -70,14 +89,33 @@ const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
         </input>
       </form>
 
-      {activeConstituency.sort().map(constituency => (
-        <button
-          className='standard-button'
-          style={{ margin: '0px 7px 7px 0px' }}
-          onClick={() => setActiveConstituency(activeConstituency.filter(x => (x !== constituency)))}>
-          {constituency} | ✕
-        </button>
-      ))}
+      <form
+        onSubmit={(e) => {
+          const constituency_name = data.allDataCsv.edges.filter(x => x.node.mp_fullname === inputMPState)[0].node.constituency_name
+          console.log(constituency_name)
+          if (fullMPList.includes(inputMPState) && !activeConstituency.includes(constituency_name)) {
+            setActiveConstituency([...activeConstituency, constituency_name])
+            setInputMPState('')
+          }
+          e.preventDefault()
+        }}
+        style={{ marginBottom: '7px' }}
+      >
+        <input
+          style={{
+            width: '100%',
+            border: '1px black solid',
+            background: 'hsla(0, 100%, 100%, 0.3)'
+          }}
+          onChange={(e) => {
+            setInputMPState(e.target.value)
+          }}
+          type='text'
+          list='mp-list'
+          placeholder='Search MPs...'
+          value={inputMPState}>
+        </input>
+      </form>
 
       <datalist id='constituency-list'>
         {fullConstituencyList
@@ -86,6 +124,23 @@ const UpmGraphWindow = ({ activeConstituency, setActiveConstituency }) => {
             <option value={constituency} />
           ))}
       </datalist>
+
+      <datalist id='mp-list'>
+        {data.allDataCsv.edges
+          .filter(e => !activeConstituency.includes(e.node.constituency_name))
+          .map(e => (
+            <option value={e.node.mp_fullname} />
+          ))}
+      </datalist>
+
+      {activeConstituency.sort().map(constituency => (
+        <button
+          className='standard-button'
+          style={{ margin: '0px 7px 7px 0px' }}
+          onClick={() => setActiveConstituency(activeConstituency.filter(x => (x !== constituency)))}>
+          {constituency} | ✕
+        </button>
+      ))}
 
       {(activeConstituency.length === 0) &&
         <div style={{ margin: '50px 30px 0px 30px', padding: '10px 10px 10px 10px', border: '1px solid black', background: 'hsla(0,100%,0%,0.05)' }}>
