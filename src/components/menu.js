@@ -98,7 +98,7 @@ const MenuBody = () => {
           <MenuElement to="/uk-politics-map/">UK Politics Map</MenuElement>
           <MenuElement to="/uk-politics-map-dev-log/">UK Politics Map Dev Log</MenuElement>
           {data.allMarkdownRemark.edges.map(post => {
-            if (post.node.frontmatter.path != '/lorem-ipsum-article') {
+            if (post.node.frontmatter.path !== '/lorem-ipsum-article') {
               return (<MenuElement key={post.node.id} to={post.node.frontmatter.path}>{post.node.frontmatter.date} {'///'} {post.node.frontmatter.title}</MenuElement>)
             }
           })}
