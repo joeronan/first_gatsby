@@ -165,7 +165,7 @@ const Menu = () => {
   return (
     <div>
       <div style={{
-        background: '#fce483',
+        background: '#7dadc3',
         // background: `hsl(${hue},95%,75%)`,
         position: 'fixed',
         left: '0',
@@ -178,7 +178,7 @@ const Menu = () => {
       </div>
 
       <animated.button style={{
-        background: '#fce483',
+        background: '#7dadc3',
         // background: `hsl(${hue},95%,75%)`,
         position: 'fixed',
         bottom: '0',

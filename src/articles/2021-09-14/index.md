@@ -7,7 +7,9 @@ description: "A test of the article functionality"
 # disclaimer: "This is testing the disclaimer"
 ---
 
-France beat China and baseball is the best sport at the games. This was the world of the 2020 Olympic Games under one small rule change. Instead of looking at the number of events won, we look at the number of *physical medals* brought home. This means Tom Daley and Matty Lee actually brought home two gold medals for Team GB despite only winning one event (synchronized 10m platform dive).
+![Tokyo 2020 Olympic Medals, silver, gold, and bronze hung in front of a black background](https://images.teamusa.org/-/media/TeamUSA/Tokyo2020/tokyo2020medals_800x425.jpg)
+
+France beat China and baseball is the best sport at the games. This was the world of the 2020 Olympic Games under one small rule change. Instead of looking at the number of events won, we look at the number of *physical medals* brought home. This means Tom Daley and Matty Lee actually won two gold medals for Team GB despite only winning one event (the synchronized 10m platform dive). Let's see how this changed the games!
 
 ### The Winners
 
@@ -17,7 +19,7 @@ France beat China and baseball is the best sport at the games. This was the worl
 
 ### The Losers
 
-- **Golfers**. These athletes can only compete in one event (men's individual or women's individual) and lack transferrable skills to compete in any other sport. This limits golfers to only winning one medal max for their country. Their only hope is that a good golf swing can translate into a good baseball swing.
+- **Golfers**. These athletes can only compete in one event (men's individual or women's individual) and lack transferrable skills to compete in any other sport. This limits golfers to only winning one medal max for their country. Their only hope is if a good golf swing can translate into a good baseball swing.
 - **China**. From being two golds away from victory to almost half the number of golds as the US, China comes out as a significant loser.
 - **Kenya**. With a drop of 10 places, Kenya had the largest fall from grace. This was due to the fact that the country only won medals in solo events (all middle distance runs).
 - **Mexico**. Despite bringing home 27 medals (all bronzes) Mexico placed 83rd.
