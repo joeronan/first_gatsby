@@ -1,5 +1,5 @@
 ---
-path: "/notes-from-elements-of-style"
+path: "/writing-for-stemfolk"
 date: "2021-10-27"
 title: "Writing for STEMfolk"
 subheading: "How I'm trying to write better"
