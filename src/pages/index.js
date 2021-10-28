@@ -12,28 +12,9 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" />
     <h1>Welcome!</h1>
 
-    <p>I'm a Data Scientist living in London who likes to build data visualisations<label htmlFor="sn-demo"
-      className="margin-toggle sidenote-number">
-    </label>
-      <input type="checkbox"
-        id="sn-demo"
-        className="margin-toggle" /><span className="sidenote">
-        This is a side note. Notice there isn’t a number preceding the note.
-      </span>. I have one work in progress project up on this website:</p>
+    <p>I'm a Data Scientist living in London who likes to build data visualisations. This website is the home for everything I'm working on.</p>
 
-    <ul>
-      <li><Link to="/uk-politics-map/">A dashboard for understanding UK constituencies</Link></li>
-    </ul>
-
-    <p>I'm always interested in hearing opportunities so feel free to contact me on <a href="https://www.linkedin.com/in/joe-ronan/">LinkedIn</a> or <a href="https://github.com/joeronan">Github</a>
-      <label for="mn-demo" class="margin-toggle">*</label>
-      <input type="checkbox"
-        id="mn-demo"
-        className="margin-toggle" /><span className="marginnote">
-        This is a margin note. Notice there isn’t a number preceding the note.
-      </span>.</p>
-
-    <p>You can click on the elliptic stars to find the website's menu.</p>
+    <p>I'm always interested in hearing opportunities so feel free to contact me on <a href="https://twitter.com/joejamesronan">Twitter</a>, <a href="https://www.linkedin.com/in/joe-ronan/">LinkedIn</a> or <a href="https://github.com/joeronan">Github</a>.</p>
 
     <p>Thanks for visiting!</p>
 
@@ -53,7 +34,7 @@ export const data = graphql`
 query {
   roomImage: file(relativePath: { eq: "room.png" }) {
     childImageSharp {
-      fluid(maxWidth: 333) {
+      fluid {
         ...GatsbyImageSharpFluid_noBase64
       }
     }

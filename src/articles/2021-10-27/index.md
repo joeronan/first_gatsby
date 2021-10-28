@@ -11,7 +11,9 @@ I am shit at writing. I partly blame this on the UK's education system; early sp
 
 Why share this then? Because there are likely other STEM folk who see themselves in my first paragraph. I hope my notes can be useful to them.
 
-For starters I read Strunk & White's [Elements of Style](https://en.wikipedia.org/wiki/The_Elements_of_Style), Orwell's [Politics and the English Language](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/), and a bunch of random Hemingway quotes about writing. Below are my abridged notes. These three works prioritise clear & concise communication above all else[\*](#abcde).
+For starters I read Strunk & White's [Elements of Style](https://en.wikipedia.org/wiki/The_Elements_of_Style), Orwell's [Politics and the English Language](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/), and a bunch of random Hemingway quotes about writing. Below are my abridged notes. These three works prioritise clear & concise communication above all else[^1].
+
+[^1]: If you want something very similar for Data Visualization (an intro to clear & concise style) I recommend [Edward Tufte](https://en.wikipedia.org/wiki/Edward_Tufte)'s *The Visual Display of Quantitative Information*. This website uses Tufte CSS which is inspired by his work.
 
 It's worth noting that they introduce only **one** style of writing. Nothing in these notes should be considered gospel; you can and should break all of these rules. You can safely ignore Orwell's claims that disregarding these rules makes you a bad writer. Instead they are useful for bad writers (like myself) to become okay writers with a palatable style.
 
@@ -84,5 +86,3 @@ Hope these notes help!
 - Numerals should be used over words:
   - The robbery took place on the ninth of October.
   - The robbery took place on October 9th.
-
-<a name="abcde"></a>\* As an aside, if you want something very similar for Data Visualization (an intro to clear & concise style) I recommend [Edward Tufte](https://en.wikipedia.org/wiki/Edward_Tufte)'s *The Visual Display of Quantitative Information*.

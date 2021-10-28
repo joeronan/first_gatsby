@@ -7,7 +7,7 @@ const Image = () => {
     query {
       headerImage: file(relativePath: { eq: "header.png" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
+          fluid {
             ...GatsbyImageSharpFluid_noBase64
           }
         }

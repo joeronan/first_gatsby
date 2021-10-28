@@ -57,11 +57,16 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/sparkle.png`,
+        icon: `src/images/candle.png`,
       },
     },
     `gatsby-plugin-gatsby-cloud`,
     'gatsby-plugin-catch-links',
-    'gatsby-transformer-remark'
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-tufte`],
+      },
+    },
   ],
 }

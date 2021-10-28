@@ -8,13 +8,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Menu />
-
-      <div
-        style={{
-          width: '100%',
-          maxWidth: 666,
-        }}
-      >
+      <div className='body-wrapper'>
         {children}
       </div>
     </>

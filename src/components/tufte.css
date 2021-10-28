@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.body-wrapper {
+  width: 60%;
+}
+
 .header {
   margin: auto;
   width: 80%;
@@ -37,7 +41,7 @@
   width: 20px;
   height: 20px;
   text-align: center;
-  background: rgb(232,207,167);
+  background: rgba(232,207,167,0);
   border: 1px black none ;
   font-family: 'Courier', monospace;
   color: #49443c;
@@ -55,13 +59,13 @@ a:link {
   color: hsl(0, 0%, 60%);
 }
 a:visited {
-  color: hsl(0, 0%, 40%);
+  color: hsl(0, 0%, 50%);
 }
 a:hover {
-  color: hsl(330, 100%, 71%);
+  color: hsl(236, 100%, 76%);
 }
 a:active {
-  color: hsl(330, 100%, 61%);
+  color: hsl(310, 100%, 76%);
 }
 
 /* Scrollbar */
@@ -304,7 +308,7 @@ img {
 .marginnote {
     float: right;
     clear: right;
-    margin-right: -52.5%;
+    margin-right: -57.5%;
     width: 50%;
     margin-top: 0.3rem;
     margin-bottom: 0;
@@ -488,7 +492,7 @@ label.margin-toggle:not(.sidenote-number) {
       clear: both;
       width: 95%;
       margin: 1rem 2.5%;
-      vertical-align: baseline;
+      /* vertical-align: baseline; */
       position: relative;
   }
 
@@ -513,6 +517,10 @@ label.margin-toggle:not(.sidenote-number) {
     padding-right: 5%;
   }
 
+  .body-wrapper {
+    width: 100%;
+  }
+
   .header {
     padding-top: 10px;
     margin: auto;
@@ -522,6 +530,10 @@ label.margin-toggle:not(.sidenote-number) {
   .menu-wrapper {
     position: static;
     width: 100%;
+    background-color: rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.1);
+    margin-top: 15px;
+    padding-bottom: 20px;
   }
 
   .menu-list-wrapper {

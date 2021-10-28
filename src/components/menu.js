@@ -25,7 +25,7 @@ const MenuElement = ({ to, children }) => {
         textDecoration: 'none',
       }}
         activeStyle={{
-          color: '#777',
+          color: '#555',
           backgroundColor: 'rgba(0, 0, 0, 0.4)',
           cursor: 'default'
         }}
@@ -88,14 +88,14 @@ const Menu = () => {
       <div className='menu-list-wrapper'>
         <MenuSet title='Info'>
           <MenuElement to="/">Home</MenuElement>
-          <MenuElement to="/">CV</MenuElement>
+          {/* <MenuElement to="/">CV</MenuElement> */}
           <MenuElement to="https://twitter.com/joejamesronan">Twitter</MenuElement>
           <MenuElement to="https://github.com/joeronan/">Github</MenuElement>
           <MenuElement to="https://www.linkedin.com/in/joe-ronan/">LinkedIn</MenuElement>
         </MenuSet>
 
         <MenuSet title='Articles'>
-          {data.allMarkdownRemark.edges.map(post => {
+          {data.allMarkdownRemark.edges.sort((firstPost, secondPost) => firstPost.node.frontmatter.date > secondPost.node.frontmatter.date ? -1 : 1).map(post => {
             if (post.node.frontmatter.path !== '/lorem-ipsum-article') {
               return (<MenuElement key={post.node.id} to={post.node.frontmatter.path}>{post.node.frontmatter.date} {'///'} {post.node.frontmatter.title}</MenuElement>)
             }
@@ -103,13 +103,11 @@ const Menu = () => {
         </MenuSet>
 
         <MenuSet title='Code Projects'>
-          <MenuElement to="/music/">Music</MenuElement>
-          <MenuElement to="/art/">Art</MenuElement>
+          <MenuElement to="/">Coming Soon!</MenuElement>
         </MenuSet>
 
         <MenuSet title='Creative Projects'>
-          <MenuElement to="/music/">Music</MenuElement>
-          <MenuElement to="/art/">Art</MenuElement>
+          <MenuElement to="/">Coming Soon!</MenuElement>
         </MenuSet>
       </div>
     </div>
