@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const Music = () => (
   <Layout>
     <SEO title="Music" />
-    <h2>Music</h2>
+    <h1>Music</h1>
 
     <p>I play guitar & banjo, generally a very bad form of Piedmont Blues. I also have a couple synths, a drum machine, and I'm learning Logic Pro. I want to get better at sharing my music so I'm gonna upload bits & pieces here.</p>
 

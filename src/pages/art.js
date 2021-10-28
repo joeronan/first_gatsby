@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const Art = () => (
   <Layout>
     <SEO title="Art" />
-    <h2>Art</h2>
+    <h1>Art</h1>
 
     <p>Here is where I keep all my art. I do a mix of drawing & 3D rendering in blender. None of it is very good but I quite enjoy doing it!</p>
 
