@@ -68,5 +68,20 @@ module.exports = {
         plugins: [`gatsby-remark-tufte`],
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              backgroundColor: 'transparent',
+              tracedSVG: { color: "#707070" },
+            },
+          },
+        ],
+      },
+    },
   ],
 }
