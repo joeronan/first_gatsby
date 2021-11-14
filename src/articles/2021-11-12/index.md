@@ -4,10 +4,9 @@ date: "2021-11-12"
 title: "Vaccine inequality continues"
 subheading: "Rollout of booster vaccines in rich countries outpaces first doses in poor countries"
 description: "A test of the article functionality"
-disclaimer: "This was written on November 10th 2021 in the style of The Economist's Daily Chart"
 ---
 
-![A chart showing vaccination rates for rich and poor countries. Shows that 3rd vaccination rates in rich countries is higher than 1st vaccination rates in poor countries](https://i.imgur.com/3ZTlQOD.png)
+![A chart showing vaccination rates for rich and poor countries. Shows that 3rd vaccination rates in rich countries is higher than 1st vaccination rates in poor countries](graph.png)
 
 As the booster vaccine rollout accelerates in rich countries, poor countries continue to face difficulties procuring initial vaccines. In mid-October the rate of people with 3 doses in rich countries was higher than the rate with 1 dose in poor countries.
 
@@ -18,3 +17,5 @@ COVAX, the initiative intended to give poorer countries a competitive chance in 
 Successful rollouts mean rich countries are unlikely to budge. There is little political incentive for leaders to give up their own vaccine supplies or modify contracts with suppliers. As winter comes in, boosters will be key for preventing new lockdowns. Hoarding vaccines gives a bad image on the world stage but it’s much more valuable for politicians to successfully control COVID at home.
 
 Rich countries cannot simply wait for supply to increase. According to UNICEF the productive capacity for all COVID vaccines is 12 billion doses across 2021. This goes up to 40 billion in 2022. If booster shots are to be administered every 6 months then this capacity increase must happen as soon as possible, and fairer distribution must happen sooner. Failure to do so will prevent low income countries from recovering economically and will cause a massive loss of life.
+
+*This article was written on November 10th 2021 in the style of The Economist's Daily Chart.*
