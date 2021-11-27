@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" />
     <h1>Welcome!</h1>
 
-    <p>I'm a Data Scientist living in London who likes to build data visualisations. This website is the home for everything I'm working on.</p>
+    <p>I'm a Data Scientist / Software Engineer living in London who likes to build data visualisations. This website is the home for everything I'm working on.</p>
 
     <p>I'm always interested in hearing opportunities so feel free to contact me on <a href="https://twitter.com/joejamesronan">Twitter</a>, <a href="https://www.linkedin.com/in/joe-ronan/">LinkedIn</a> or <a href="https://github.com/joeronan">Github</a>.</p>
 

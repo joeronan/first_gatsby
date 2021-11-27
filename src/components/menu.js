@@ -97,7 +97,7 @@ const Menu = () => {
         <MenuSet title='Articles'>
           {data.allMarkdownRemark.edges.sort((firstPost, secondPost) => firstPost.node.frontmatter.date > secondPost.node.frontmatter.date ? -1 : 1).map(post => {
             if (post.node.frontmatter.path !== '/lorem-ipsum-article') {
-              return (<MenuElement key={post.node.id} to={post.node.frontmatter.path}>{post.node.frontmatter.date} {'///'} {post.node.frontmatter.title}</MenuElement>)
+              return (<MenuElement key={post.node.id} to={post.node.frontmatter.path}>{post.node.frontmatter.date} || {post.node.frontmatter.title}</MenuElement>)
             }
           })}
         </MenuSet>
