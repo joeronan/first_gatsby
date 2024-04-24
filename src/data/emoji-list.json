@@ -1,0 +1,446 @@
+[
+  {
+    "Emoji": "😀",
+    "Description": "grinning face"
+  },
+  {
+    "Emoji": "😃",
+    "Description": "grinning face with big eyes"
+  },
+  {
+    "Emoji": "😄",
+    "Description": "grinning face with smiling eyes"
+  },
+  {
+    "Emoji": "😁",
+    "Description": "beaming face with smiling eyes"
+  },
+  {
+    "Emoji": "😆",
+    "Description": "grinning squinting face"
+  },
+  {
+    "Emoji": "😅",
+    "Description": "grinning face with sweat"
+  },
+  {
+    "Emoji": "🤣",
+    "Description": "rolling on the floor laughing"
+  },
+  {
+    "Emoji": "😂",
+    "Description": "face with tears of joy"
+  },
+  {
+    "Emoji": "🙂",
+    "Description": "slightly smiling face"
+  },
+  {
+    "Emoji": "🙃",
+    "Description": "upside-down face"
+  },
+  {
+    "Emoji": "😉",
+    "Description": "winking face"
+  },
+  {
+    "Emoji": "😊",
+    "Description": "smiling face with smiling eyes"
+  },
+  {
+    "Emoji": "😇",
+    "Description": "smiling face with halo"
+  },
+  {
+    "Emoji": "🥰",
+    "Description": "smiling face with hearts"
+  },
+  {
+    "Emoji": "😍",
+    "Description": "smiling face with heart-eyes"
+  },
+  {
+    "Emoji": "🤩",
+    "Description": "star-struck"
+  },
+  {
+    "Emoji": "😘",
+    "Description": "face blowing a kiss"
+  },
+  {
+    "Emoji": "😗",
+    "Description": "kissing face"
+  },
+  {
+    "Emoji": "😚",
+    "Description": "kissing face with closed eyes"
+  },
+  {
+    "Emoji": "😙",
+    "Description": "kissing face with smiling eyes"
+  },
+  {
+    "Emoji": "😋",
+    "Description": "face savoring food"
+  },
+  {
+    "Emoji": "😛",
+    "Description": "face with tongue"
+  },
+  {
+    "Emoji": "😜",
+    "Description": "winking face with tongue"
+  },
+  {
+    "Emoji": "🤪",
+    "Description": "zany face"
+  },
+  {
+    "Emoji": "😝",
+    "Description": "squinting face with tongue"
+  },
+  {
+    "Emoji": "🤑",
+    "Description": "money-mouth face"
+  },
+  {
+    "Emoji": "🤗",
+    "Description": "hugging face"
+  },
+  {
+    "Emoji": "🤭",
+    "Description": "face with hand over mouth"
+  },
+  {
+    "Emoji": "🤫",
+    "Description": "shushing face"
+  },
+  {
+    "Emoji": "🤔",
+    "Description": "thinking face"
+  },
+  {
+    "Emoji": "🤐",
+    "Description": "zipper-mouth face"
+  },
+  {
+    "Emoji": "🤨",
+    "Description": "face with raised eyebrow"
+  },
+  {
+    "Emoji": "😐",
+    "Description": "neutral face"
+  },
+  {
+    "Emoji": "😑",
+    "Description": "expressionless face"
+  },
+  {
+    "Emoji": "😶",
+    "Description": "face without mouth"
+  },
+  {
+    "Emoji": "😏",
+    "Description": "smirking face"
+  },
+  {
+    "Emoji": "😒",
+    "Description": "unamused face"
+  },
+  {
+    "Emoji": "🙄",
+    "Description": "face with rolling eyes"
+  },
+  {
+    "Emoji": "😬",
+    "Description": "grimacing face"
+  },
+  {
+    "Emoji": "🤥",
+    "Description": "lying face"
+  },
+  {
+    "Emoji": "😌",
+    "Description": "relieved face"
+  },
+  {
+    "Emoji": "😔",
+    "Description": "pensive face"
+  },
+  {
+    "Emoji": "😪",
+    "Description": "sleepy face"
+  },
+  {
+    "Emoji": "🤤",
+    "Description": "drooling face"
+  },
+  {
+    "Emoji": "😴",
+    "Description": "sleeping face"
+  },
+  {
+    "Emoji": "😷",
+    "Description": "face with medical mask"
+  },
+  {
+    "Emoji": "🤒",
+    "Description": "face with thermometer"
+  },
+  {
+    "Emoji": "🤕",
+    "Description": "face with head-bandage"
+  },
+  {
+    "Emoji": "🤢",
+    "Description": "nauseated face"
+  },
+  {
+    "Emoji": "🤮",
+    "Description": "face vomiting"
+  },
+  {
+    "Emoji": "🤧",
+    "Description": "sneezing face"
+  },
+  {
+    "Emoji": "🥵",
+    "Description": "hot face"
+  },
+  {
+    "Emoji": "🥶",
+    "Description": "cold face"
+  },
+  {
+    "Emoji": "🥴",
+    "Description": "woozy face"
+  },
+  {
+    "Emoji": "😵",
+    "Description": "dizzy face"
+  },
+  {
+    "Emoji": "🤯",
+    "Description": "exploding head"
+  },
+  {
+    "Emoji": "🤠",
+    "Description": "cowboy hat face"
+  },
+  {
+    "Emoji": "🥳",
+    "Description": "partying face"
+  },
+  {
+    "Emoji": "😎",
+    "Description": "smiling face with sunglasses"
+  },
+  {
+    "Emoji": "🤓",
+    "Description": "nerd face"
+  },
+  {
+    "Emoji": "🧐",
+    "Description": "face with monocle"
+  },
+  {
+    "Emoji": "😕",
+    "Description": "confused face"
+  },
+  {
+    "Emoji": "😟",
+    "Description": "worried face"
+  },
+  {
+    "Emoji": "🙁",
+    "Description": "slightly frowning face"
+  },
+  {
+    "Emoji": "😮",
+    "Description": "face with open mouth"
+  },
+  {
+    "Emoji": "😯",
+    "Description": "hushed face"
+  },
+  {
+    "Emoji": "😲",
+    "Description": "astonished face"
+  },
+  {
+    "Emoji": "😳",
+    "Description": "flushed face"
+  },
+  {
+    "Emoji": "🥺",
+    "Description": "pleading face"
+  },
+  {
+    "Emoji": "😦",
+    "Description": "frowning face with open mouth"
+  },
+  {
+    "Emoji": "😧",
+    "Description": "anguished face"
+  },
+  {
+    "Emoji": "😨",
+    "Description": "fearful face"
+  },
+  {
+    "Emoji": "😰",
+    "Description": "anxious face with sweat"
+  },
+  {
+    "Emoji": "😥",
+    "Description": "sad but relieved face"
+  },
+  {
+    "Emoji": "😢",
+    "Description": "crying face"
+  },
+  {
+    "Emoji": "😭",
+    "Description": "loudly crying face"
+  },
+  {
+    "Emoji": "😱",
+    "Description": "face screaming in fear"
+  },
+  {
+    "Emoji": "😖",
+    "Description": "confounded face"
+  },
+  {
+    "Emoji": "😣",
+    "Description": "persevering face"
+  },
+  {
+    "Emoji": "😞",
+    "Description": "disappointed face"
+  },
+  {
+    "Emoji": "😓",
+    "Description": "downcast face with sweat"
+  },
+  {
+    "Emoji": "😩",
+    "Description": "weary face"
+  },
+  {
+    "Emoji": "😫",
+    "Description": "tired face"
+  },
+  {
+    "Emoji": "😤",
+    "Description": "face with steam from nose"
+  },
+  {
+    "Emoji": "😡",
+    "Description": "pouting face"
+  },
+  {
+    "Emoji": "😠",
+    "Description": "angry face"
+  },
+  {
+    "Emoji": "🤬",
+    "Description": "face with symbols on mouth"
+  },
+  {
+    "Emoji": "😈",
+    "Description": "smiling face with horns"
+  },
+  {
+    "Emoji": "👿",
+    "Description": "angry face with horns"
+  },
+  {
+    "Emoji": "💀",
+    "Description": "skull"
+  },
+  {
+    "Emoji": "☠",
+    "Description": "skull and crossbones"
+  },
+  {
+    "Emoji": "💩",
+    "Description": "pile of poo"
+  },
+  {
+    "Emoji": "🤡",
+    "Description": "clown face"
+  },
+  {
+    "Emoji": "👹",
+    "Description": "ogre"
+  },
+  {
+    "Emoji": "👺",
+    "Description": "goblin"
+  },
+  {
+    "Emoji": "👻",
+    "Description": "ghost"
+  },
+  {
+    "Emoji": "👽",
+    "Description": "alien"
+  },
+  {
+    "Emoji": "👾",
+    "Description": "alien monster"
+  },
+  {
+    "Emoji": "🤖",
+    "Description": "robot"
+  },
+  {
+    "Emoji": "😺",
+    "Description": "grinning cat"
+  },
+  {
+    "Emoji": "😸",
+    "Description": "grinning cat with smiling eyes"
+  },
+  {
+    "Emoji": "😹",
+    "Description": "cat with tears of joy"
+  },
+  {
+    "Emoji": "😻",
+    "Description": "smiling cat with heart-eyes"
+  },
+  {
+    "Emoji": "😼",
+    "Description": "cat with wry smile"
+  },
+  {
+    "Emoji": "😽",
+    "Description": "kissing cat"
+  },
+  {
+    "Emoji": "🙀",
+    "Description": "weary cat"
+  },
+  {
+    "Emoji": "😿",
+    "Description": "crying cat"
+  },
+  {
+    "Emoji": "😾",
+    "Description": "pouting cat"
+  },
+  {
+    "Emoji": "🙈",
+    "Description": "see-no-evil monkey"
+  },
+  {
+    "Emoji": "🙉",
+    "Description": "hear-no-evil monkey"
+  },
+  {
+    "Emoji": "🙊",
+    "Description": "speak-no-evil monkey"
+  }
+]

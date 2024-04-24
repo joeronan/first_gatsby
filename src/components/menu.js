@@ -103,7 +103,7 @@ const Menu = () => {
         </MenuSet>
 
         <MenuSet title='Code Projects'>
-          <MenuElement to="/">Coming Soon!</MenuElement>
+          <MenuElement to="/reading-the-emoji-in-the-eyes-test">Reading the Emoji in the Eyes</MenuElement>
         </MenuSet>
 
         <MenuSet title='Creative Projects'>

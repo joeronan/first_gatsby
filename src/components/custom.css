@@ -1,0 +1,11 @@
+.red-button {
+  background-color: #a81313;
+  color: #fff;
+  border-radius: 4px;
+  border: 0px;
+  font-family: "Crimson Text";
+  font-size: 20px;
+  padding: 4px 8px;
+  margin: 4px;
+  cursor: pointer;
+}
